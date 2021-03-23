@@ -4,7 +4,11 @@ public class User {
 
     private enum Level {
         Viewer,
-        Critic
+        Critic;
+
+        public Level getNext() {
+            return this.ordinal() < Level.values().length - 1 ? Level.values()[this.ordinal() + 1] : null;
+        }
     }
 
     private Level userLevel;
@@ -20,7 +24,19 @@ public class User {
     }
 
     public void incrementReviewCount() {
-        reviewCount++;
+        this.reviewCount++;
+    }
+
+    public Level getUserLevel() {
+        return this.userLevel;
+    }
+
+    public void upgradeLevel() {
+        if (this.userLevel == Level.Critic) {
+            return;
+        }
+
+        this.userLevel = this.getUserLevel().getNext();
     }
 
     public User(String userName) {

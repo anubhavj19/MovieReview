@@ -25,4 +25,8 @@ public class Movie {
         this.releaseYear = releaseYear;
         this.movieGenres = movieGenres;
     }
+
+    public int getReleaseYear() {
+        return this.releaseYear;
+    }
 }
