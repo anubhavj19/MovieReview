@@ -4,12 +4,12 @@ public class Review {
 
     private String movieTitle;
 
-    private int reviewScore;
+    private int score;
 
-    public Review(String userName, String movieTitle, int reviewScore) {
+    public Review(String userName, String movieTitle, int score) {
         this.userName = userName;
         this.movieTitle = movieTitle;
-        this.reviewScore = reviewScore;
+        this.score = score;
     }
 
     public String getUserName() {
@@ -18,5 +18,9 @@ public class Review {
 
     public String getMovieTitle() {
         return this.movieTitle;
+    }
+
+    public int getScore() {
+        return this.score;
     }
 }

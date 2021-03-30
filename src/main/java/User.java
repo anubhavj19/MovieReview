@@ -1,8 +1,9 @@
 public class User {
 
-    private String userName;
+    //private String userId;
+    private String name;
 
-    private enum Level {
+    public enum Level {
         Viewer,
         Critic;
 
@@ -11,13 +12,9 @@ public class User {
         }
     }
 
-    private Level userLevel;
+    private Level level;
 
     private int reviewCount;
-
-    public String getUserName() {
-        return userName;
-    }
 
     public int getReviewCount() {
         return this.reviewCount;
@@ -25,23 +22,28 @@ public class User {
 
     public void incrementReviewCount() {
         this.reviewCount++;
+
+        if (this.reviewCount  == 3) {
+            this.upgradeLevel();
+        }
     }
 
     public Level getUserLevel() {
-        return this.userLevel;
+        return this.level;
     }
 
     public void upgradeLevel() {
-        if (this.userLevel == Level.Critic) {
+        if (this.level == Level.Critic) {
             return;
         }
 
-        this.userLevel = this.getUserLevel().getNext();
+        this.level = this.getUserLevel().getNext();
+        System.out.println("User " + this.name + " has been upgraded to " + this.level.name() + ".");
     }
 
-    public User(String userName) {
-        this.userName = userName;
-        this.userLevel = Level.Viewer;
+    public User(String name) {
+        this.name = name;
+        this.level = Level.Viewer;
         this.reviewCount = 0;
     }
 }

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="MovieReviewTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-03-30T12:53:56" hostname="MSI-anubhavj19" time="0.018">
+  <properties/>
+  <testcase name="averageReviewScoreForAMovie()" classname="MovieReviewTest" time="0.018"/>
+  <system-out><![CDATA[java.lang.Exception: Multiple reviews for the same movie are not allowed for a user.
+java.lang.Exception: Movie has not released yet.
+User SRK has been upgraded to Critic.
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
